@@ -6,7 +6,6 @@ set t_Co=256
 set background=dark
 if has('gui_running')
     colorscheme solarized
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 endif
 
 let g:Powerline_symbols = "fancy"
@@ -25,7 +24,7 @@ let maplocalleader = ","
 let g:slimv_leader = '.'
 let g:lisp_rainbow = 1
 
-let g:ctrlp_max_files = 150000
+let g:ctrlp_max_files = 200000
 
 set incsearch
 set nohlsearch
@@ -106,6 +105,9 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+au BufRead,BufNewFile *.html.twig set filetype=html
+au BufRead,BufNewFile *.ts set filetype=javascript
 
 set laststatus=2
 
